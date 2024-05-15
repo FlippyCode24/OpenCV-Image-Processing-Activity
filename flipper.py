@@ -2,21 +2,19 @@ import cv2 as cv
 import numpy as np
 
 # Global Variables
+
+
+def show_image(image_path: str) -> None:
+    img: cv.MatLike = cv.imread(image_path)
+
+    img_name: str = image_path.split('/')[1].split('.')[0]
+    cv.imshow(img_name, img)
+    cv.waitKey(0)
+
 GRAYSCALE = cv.COLOR_BGR2GRAY
 HSV = cv.COLOR_BGR2HSV
 LAB = cv.COLOR_BGR2LAB
 RGB = cv.COLOR_BGR2RGB
-
-LOW = 25
-MEDIUM = 50
-HIGH = 100
-
-def show_image(image_path: str) -> None:
-    img: cv.MatLike = cv.imread(image_path)
-    
-    img_name: str = image_path.split('/')[1].split('.')[0]
-    cv.imshow(img_name, img)
-    cv.waitKey(0)
 
 def color_convert(image_path: str, type:int) -> None:
     img: cv.MatLike = cv.imread(image_path)
@@ -51,6 +49,10 @@ def image_rotate(image_path, angle: int) -> None:
     img_name = image_path.split('/')[1].split('.')[0] + f' {angle} degrees Rotated'
     cv.imshow(img_name, rotated_img)
     cv.waitKey(0)
+
+LOW = 25
+MEDIUM = 50
+HIGH = 100
 
 def image_blur(image_path: str, intensity: int) -> None:
     img = cv.imread(image_path)
