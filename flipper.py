@@ -11,6 +11,13 @@ LOW = 25
 MEDIUM = 50
 HIGH = 100
 
+def show_image(image_path: str) -> None:
+    img: cv.MatLike = cv.imread(image_path)
+    
+    img_name: str = image_path.split('/')[1].split('.')[0]
+    cv.imshow(img_name, img)
+    cv.waitKey(0)
+
 def color_convert(image_path: str, type:int) -> None:
     img: cv.MatLike = cv.imread(image_path)
 
