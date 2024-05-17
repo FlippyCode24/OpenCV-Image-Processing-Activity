@@ -63,5 +63,3 @@ def image_blur(image_path: str, intensity: int) -> None:
     cv.imshow(img_name, blur_img)
     cv.waitKey(0)
 
-
-

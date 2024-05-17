@@ -1,3 +1,7 @@
+'''
+Computer Vision: Activity 1
+'''
+
 import flipper
 
 caloocan_boy = 'images/caloocan_boy.jpeg'
@@ -7,7 +11,7 @@ How to Use: Uncomment to showcase different functions
 '''
 # flipper.show_image(caloocan_boy)
 
-# flipper.color_convert(image_path=caloocan_boy, type=flipper.RGB)
+flipper.color_convert(image_path=caloocan_boy, type=flipper.GRAYSCALE)
 
 # flipper.image_translate(caloocan_boy, -100, -100)
 # flipper.image_translate(caloocan_boy, 100, 100)
